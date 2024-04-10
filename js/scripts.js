@@ -17,3 +17,17 @@ function generateQrCode(){
 qrCodeBtn.addEventListener("click", ()  => {
     generateQrCode();
 });
+
+
+qrCodeInput.addEventListener("keydown", (e) => {
+    if (e.code === "Enter") {
+      generateQrCode();
+    }
+  });
+
+  qrCodeInput.addEventListener("keyup", () =>{
+    if(!qrCodeInput.value){
+        container.classList.remove("active");
+        qrCodeBtn.innerText = "Gerar QR Code";
+    }
+  })
